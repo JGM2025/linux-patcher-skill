@@ -1,0 +1,34 @@
+# User-specific configuration files
+*.conf
+!*.example.conf
+
+# Sensitive credentials
+*credentials*
+!*credentials.example*
+!*credentials*.example*
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Backup files
+*.bak
+*.backup
+
+# Test outputs
+test-output/

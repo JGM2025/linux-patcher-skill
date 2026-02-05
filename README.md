@@ -93,7 +93,8 @@ scripts/patch-host-full.sh admin@webserver.example.com /opt/docker
 - **SSH client** with key authentication
 - **curl** and **jq** for PatchMon integration
 - **Passwordless sudo** on target hosts (restricted to patching commands)
-- **PatchMon** installed (optional but recommended)
+- **PatchMon** installed (required to check which hosts need updating)
+  - Does NOT need to be on the OpenClaw host
   - Download: https://github.com/PatchMon/PatchMon
   - Docs: https://docs.patchmon.net
 

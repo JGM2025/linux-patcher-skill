@@ -153,6 +153,10 @@ scripts/patch-multiple.sh my-servers.conf
 - [ ] **Bash** 4.0 or higher
 - [ ] **curl** installed (for PatchMon API)
 - [ ] **jq** installed (for JSON parsing)
+- [ ] **PatchMon** installed (required to check which hosts need updating)
+  - Does NOT need to be on the OpenClaw host
+  - Can be installed on any server accessible via HTTPS
+  - Download: https://github.com/PatchMon/PatchMon
 
 **Install missing tools:**
 ```bash

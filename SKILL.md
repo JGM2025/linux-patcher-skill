@@ -175,30 +175,53 @@ brew install curl jq
 - [ ] **Docker Compose** installed (optional, only for full updates)
 - [ ] **PatchMon agent** installed and reporting (optional but recommended)
 
-### PatchMon Setup (Recommended for Automatic Mode)
+### PatchMon Setup (Required for Automatic Mode)
+
+**PatchMon is required to automatically detect which hosts need patching.**
+
+**Important:** PatchMon does NOT need to be installed on the same server as OpenClaw. Install PatchMon on a separate server (can be any server on your network), and OpenClaw will query it via API.
 
 **Download PatchMon:**
 - **GitHub:** https://github.com/PatchMon/PatchMon
 - **Documentation:** https://docs.patchmon.net
 
 **What you need:**
-- [ ] PatchMon server installed and accessible via HTTPS
-- [ ] PatchMon agents installed on all target hosts
+- [ ] PatchMon server installed on ANY accessible server (not necessarily the OpenClaw host)
+- [ ] PatchMon agents installed on all target hosts you want to patch
 - [ ] PatchMon API credentials (username/password)
+- [ ] Network connectivity from OpenClaw host to PatchMon server (HTTPS)
+
+**Architecture:**
+```
+┌─────────────────┐      HTTPS API      ┌─────────────────┐
+│ OpenClaw Host   │ ──────────────────> │ PatchMon Server │
+│ (this machine)  │    Query updates    │ (separate host) │
+└─────────────────┘                     └─────────────────┘
+                                                  │
+                                                  │ Reports
+                                                  ▼
+                                         ┌─────────────────┐
+                                         │ Target Hosts    │
+                                         │ (with agents)   │
+                                         └─────────────────┘
+```
 
 **Quick Start:**
-1. Install PatchMon server (see GitHub repo)
-2. Install agents on target hosts
-3. Configure credentials for this skill:
+1. Install PatchMon server on a separate server (see GitHub repo)
+2. Install PatchMon agents on all hosts you want to patch
+3. Configure OpenClaw to access PatchMon API:
 
 ```bash
 cp scripts/patchmon-credentials.example.conf ~/.patchmon-credentials.conf
-nano ~/.patchmon-credentials.conf
+nano ~/.patchmon-credentials.conf  # Set PatchMon server URL
 chmod 600 ~/.patchmon-credentials.conf
 ```
 
 **Detailed setup:**
 See `references/patchmon-setup.md` for complete installation guide.
+
+**Can I use this skill without PatchMon?**
+Yes! You can use manual mode to target specific hosts without PatchMon. However, automatic detection of hosts needing updates requires PatchMon.
 
 ### On Target Hosts
 

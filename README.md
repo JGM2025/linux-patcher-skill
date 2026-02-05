@@ -97,10 +97,20 @@ scripts/patch-host-full.sh admin@webserver.example.com /opt/docker
   - Download: https://github.com/PatchMon/PatchMon
   - Docs: https://docs.patchmon.net
 
+### For Automatic Host Detection
+
+- **PatchMon server** (required for automatic mode)
+  - **Important:** Does NOT need to be on the same server as OpenClaw
+  - Install on any accessible server (separate host recommended)
+  - OpenClaw queries PatchMon via HTTPS API
+  - Download: https://github.com/PatchMon/PatchMon
+
 ### Optional
 
 - **Docker** on target hosts (for container updates)
 - **Docker Compose** on target hosts
+
+**Note:** You can use this skill without PatchMon by manually specifying hosts, but automatic detection of which hosts need updates requires PatchMon.
 
 ## 📖 Documentation
 

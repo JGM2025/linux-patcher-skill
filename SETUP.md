@@ -24,7 +24,9 @@ Before starting, ensure you have:
 - [ ] SSH client installed on OpenClaw host
 - [ ] `jq` and `curl` installed (for PatchMon integration)
 - [ ] Root/sudo access on all target hosts
-- [ ] PatchMon server deployed (optional but recommended)
+- [ ] **PatchMon server deployed** (required for automatic host detection)
+  - **Important:** PatchMon does NOT need to be on the same server as OpenClaw
+  - Install on any server accessible via HTTPS from your OpenClaw host
   - Download: https://github.com/PatchMon/PatchMon
   - Docs: https://docs.patchmon.net
 

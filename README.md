@@ -28,7 +28,7 @@ openclaw skill install linux-patcher.skill
 clawhub install linux-patcher
 
 # Option 3: Install from this repo
-git clone https://github.com/yourusername/linux-patcher-skill
+git clone https://github.com/JGM2025/linux-patcher-skill
 cd linux-patcher-skill
 openclaw skill install .
 ```
@@ -196,7 +196,7 @@ MIT License - See [LICENSE](LICENSE) file for details.
 ## 🆘 Support
 
 - **Documentation:** See SKILL.md, SETUP.md, WORKFLOWS.md
-- **Issues:** https://github.com/yourusername/linux-patcher-skill/issues
+- **Issues:** https://github.com/JGM2025/linux-patcher-skill/issues
 - **OpenClaw Community:** https://discord.com/invite/clawd
 - **PatchMon:** https://github.com/PatchMon/PatchMon
 
